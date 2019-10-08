@@ -1,11 +1,5 @@
 import React from "react";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Dimensions,
-	TouchableOpacity
-} from "react-native";
+import { StyleSheet, View, Dimensions } from "react-native";
 import Tile from "./components/tile";
 const width = Dimensions.get("screen").width;
 
