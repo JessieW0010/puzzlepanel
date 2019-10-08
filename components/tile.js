@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
 export default function Tile(props) {
-	const [color, setColor] = useState("");
+	const [color, setColor] = useState("gray");
 
 	const onPress = function() {
-		setColor({ backgroundColor: "green" });
+		color === "gray" ? setColor("green") : setColor("gray");
 	};
 
 	return (
-		<TouchableOpacity style={[styles.square, color]} onPress={() => onPress()}>
+		<TouchableOpacity
+			style={[styles.square, { backgroundColor: color }]}
+			onPress={() => onPress()}
+		>
 			{/* <Text>8</Text> */}
 		</TouchableOpacity>
 	);
@@ -17,7 +20,6 @@ export default function Tile(props) {
 
 const styles = StyleSheet.create({
 	square: {
-		backgroundColor: "gray",
 		flex: 1,
 		margin: "2%"
 	}
